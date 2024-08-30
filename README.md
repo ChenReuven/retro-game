@@ -49,6 +49,10 @@ Tron Pong Game is a modern take on the classic Pong game, featuring a Tron Legac
 5. The game ends when a player reaches a score of 5.
 6. The winner is displayed on the screen, and you can restart the game by clicking the "Restart Game" button.
 
+## Video
+
+![Tron Pong Game](images/4.gif)
+
 ## Screenshots
 
 ### Splash Screen
