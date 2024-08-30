@@ -14,6 +14,30 @@ let aiScore = 0;
 let aiSpeed = 0.05; // Default to beginner
 let gameRunning = true;
 
+let gamepadIndex = null;
+
+window.addEventListener("gamepadconnected", (e) => {
+    gamepadIndex = e.gamepad.index;
+    console.log("Gamepad connected at index " + gamepadIndex);
+});
+
+window.addEventListener("gamepaddisconnected", (e) => {
+    if (gamepadIndex === e.gamepad.index) {
+        gamepadIndex = null;
+        console.log("Gamepad disconnected from index " + gamepadIndex);
+    }
+});
+
+function updateGamepad() {
+    if (gamepadIndex !== null) {
+        const gamepad = navigator.getGamepads()[gamepadIndex];
+        if (gamepad) {
+            const axisValue = gamepad.axes[1]; // Assuming the left stick vertical axis
+            playerPaddle.dy = axisValue * 6; // Adjust the multiplier as needed
+        }
+    }
+}
+
 function drawRect(x, y, width, height, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, width, height);
@@ -32,6 +56,8 @@ function drawText(text, x, y, color) {
 
 function update() {
     if (!gameRunning) return;
+
+    updateGamepad(); // Add this line to update gamepad input
 
     // Move player paddle
     playerPaddle.y += playerPaddle.dy;

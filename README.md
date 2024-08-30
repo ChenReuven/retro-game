@@ -24,6 +24,7 @@ Tron Pong Game is a modern take on the classic Pong game, featuring a Tron Legac
 - Score tracking and game end condition
 - Splash screen with game instructions
 - Option to restart the game
+- **New**: Gamepad controller support
 
 ## Installation
 
@@ -44,7 +45,7 @@ Tron Pong Game is a modern take on the classic Pong game, featuring a Tron Legac
 1. Open the game in your web browser.
 2. On the splash screen, select a difficulty level.
 3. Click the "Start Game" button to begin.
-4. Use the arrow keys to move your paddle up and down.
+4. Use the arrow keys or a gamepad controller to move your paddle up and down.
 5. The game ends when a player reaches a score of 5.
 6. The winner is displayed on the screen, and you can restart the game by clicking the "Restart Game" button.
 
